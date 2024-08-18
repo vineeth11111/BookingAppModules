@@ -1,0 +1,27 @@
+package com.luv2code.rest.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.luv2code.model.UserInfo;
+import com.luv2code.service.UserInfoService;
+
+@RestController
+@RequestMapping("/user")
+public class UserInfoRestController {
+
+	@Autowired 
+	private UserInfoService userInfoService;
+	
+	@PostMapping("/save")
+	public ResponseEntity<String> saveUser(@RequestBody UserInfo userInfo)
+	{
+		UserInfo savedUser = userInfoService.saveUser(userInfo);
+		return new ResponseEntity<String>("User saved successfully", HttpStatus.OK);
+	}
+}

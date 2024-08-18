@@ -1,0 +1,11 @@
+package com.csgroup.hyd.repo;
+
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.csgroup.hyd.entity.PaymentEntity;
+
+public interface PaymentRepository extends JpaRepository<PaymentEntity, UUID> {
+
+}

@@ -1,0 +1,5 @@
+spring.application.name=SpringBootConcepts
+
+my.app.name=google
+
+my.app.url=www.google.com

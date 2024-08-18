@@ -1,0 +1,35 @@
+package com.csgroup.hyd.service;
+
+import java.time.LocalDateTime;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.csgroup.hyd.dto.BookingDTO;
+import com.csgroup.hyd.entity.PaymentEntity;
+import com.csgroup.hyd.enums.PaymentStatus;
+import com.csgroup.hyd.repo.PaymentRepository;
+import com.csgroup.hyd.service.stripe.StripeApiPaymentGateway;
+
+import jakarta.transaction.Transactional;
+@Service
+@Transactional
+public class PaymentServiceImpl implements PaymentService{
+	
+	private @Autowired PaymentRepository paymentRepository;
+	private @Autowired StripeApiPaymentGateway stripeApiPaymentGateway;
+
+	@Override
+	public BookingDTO processPayment(BookingDTO bookingDTO) {
+		//started payment processing
+		BookingDTO bookingDTOAfterPayment = stripeApiPaymentGateway.processPayment(bookingDTO);
+		PaymentEntity paymentEntity = PaymentEntity.builder().bookingId(bookingDTOAfterPayment.getBookingId())
+		                       .paymentStatus(PaymentStatus.SUCCESS)
+		                       .paymentAmount(bookingDTOAfterPayment.getBookingAmount())
+		                       .paymentDateTime(LocalDateTime.now())
+		                       .build();
+		paymentRepository.save(paymentEntity);
+		return bookingDTOAfterPayment;
+	}
+
+}

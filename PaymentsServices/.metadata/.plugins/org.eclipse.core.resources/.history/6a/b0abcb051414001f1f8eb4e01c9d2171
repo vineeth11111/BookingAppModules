@@ -1,0 +1,6 @@
+package com.csgroup.hyd.dto;
+
+public enum BookingStatus {
+
+	PENDING, SUCCESS , CANCELLED
+}

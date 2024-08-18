@@ -1,0 +1,27 @@
+#app:
+#  name: google
+#  url: www.google.com
+#my:
+#  app:
+#    colors: green,blue,orange
+#    edata:
+#      eng: 102
+#      hin: 101
+#      tel: 100
+spring:
+  application:
+    name: SpringBootConcepts
+    
+my:
+ app:
+   pid: 10
+   pcode: AB
+   pcost: 25.0
+   details:
+    - D1
+      D2
+      D3
+   version:
+       key1: value1
+       key2: value2
+       

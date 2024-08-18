@@ -1,0 +1,28 @@
+package com.luv2code.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import com.luv2code.model.UserInfo;
+import com.luv2code.repo.UserInfoRepository;
+
+@Service
+public class UserInfoServiceImpl implements UserInfoService , UserDetailsService{
+
+	private @Autowired UserInfoRepository UserInfoRepo;
+
+	@Override
+	public UserInfo saveUser(UserInfo userInfo) {
+		// TODO Auto-generated method stub
+		return UserInfoRepo.save(userInfo);
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		
+		return UserInfoRepo.findById(username).orElseThrow( () -> new UsernameNotFoundException(username +" not found. Please try with the correct user name"));
+	}
+}

@@ -1,0 +1,19 @@
+package com.luv2code.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.luv2code.model.UserInfo;
+import com.luv2code.repo.UserInfoRepository;
+
+@Service
+public class UserInfoServiceImpl implements UserInfoService{
+
+	private @Autowired UserInfoRepository UserInfoRepo;
+
+	@Override
+	public UserInfo saveUser(UserInfo userInfo) {
+		// TODO Auto-generated method stub
+		return UserInfoRepo.save(userInfo);
+	}
+}

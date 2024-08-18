@@ -1,0 +1,11 @@
+package com.example.raidurgam.fallback;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class BookingFallback {
+
+	public String bookingFallback() {
+		return " Booking service is under the maintenance please try after sometime ";
+	}
+}

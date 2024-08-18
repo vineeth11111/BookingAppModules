@@ -1,0 +1,19 @@
+package com.luv2code.runner;
+
+import java.util.Arrays;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Component
+@ConfigurationProperties(prefix="com")
+public class ReadingDataFromPropertiesRunner implements CommandLineRunner {
+
+	@Override
+	public void run(String... args) throws Exception {
+	
+		System.out.println(Arrays.asList(args));
+	}
+
+}

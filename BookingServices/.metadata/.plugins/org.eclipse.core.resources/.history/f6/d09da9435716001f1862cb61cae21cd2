@@ -1,0 +1,5 @@
+spring.application.name=SpringBootConcepts
+
+app.name=zomato
+
+app.url=www.google.com

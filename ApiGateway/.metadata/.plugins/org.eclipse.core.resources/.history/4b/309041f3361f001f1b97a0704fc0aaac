@@ -1,0 +1,13 @@
+spring.application.name=SpringDataJPAConcepts
+
+server.port=9090
+
+spring.h2.console.enabled=true
+spring.datasource.url=jdbc:h2:mem:testDB
+
+spring.jpa.show-sql=true
+
+profile=dev
+
+spring.profiles.active=qa
+

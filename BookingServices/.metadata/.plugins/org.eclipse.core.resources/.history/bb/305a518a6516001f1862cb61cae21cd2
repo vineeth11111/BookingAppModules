@@ -1,0 +1,18 @@
+
+spring:
+  application:
+    name: SpringBootConcepts
+    
+my:
+ app:
+   pid: 10
+   pcode: AB
+   pcost: 25.0
+   details:
+    - D1
+    - D2
+    - D3
+   version:
+       key1: value1
+       key2: value2
+       

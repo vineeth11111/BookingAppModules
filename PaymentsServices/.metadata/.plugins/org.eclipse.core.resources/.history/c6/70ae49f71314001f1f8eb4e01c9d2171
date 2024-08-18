@@ -1,0 +1,24 @@
+package com.csgroup.hyd.dto;
+
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
+import java.util.UUID;
+
+import lombok.Data;
+
+//@Validated
+@Data
+public class BookingDTO {
+
+	private UUID bookingId;
+	private String userId;
+	private Integer movieId;
+	private List<String> seatsSelected;
+	private LocalDate showDate;
+	private LocalTime showTime;
+	private Double bookingAmount;
+	private BookingStatus bookingStatus;	
+}
+

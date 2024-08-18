@@ -1,0 +1,8 @@
+package com.csgroup.hyd.service;
+
+import com.csgroup.hyd.dto.BookingDTO;
+
+public interface PaymentService {
+
+	public BookingDTO processPayment(BookingDTO BookingDTO);
+}

@@ -1,0 +1,103 @@
+package com.luv2code.runner;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Component
+@ConfigurationProperties(prefix="my.app")
+public class ReadingYamlDataRunner implements CommandLineRunner {
+	
+	private Integer pid;
+	private String pcode;
+	private Double pcost;
+	
+	private List<String> details;
+	
+	private Map<String,String> version;
+	
+
+	public Integer getPid() {
+		return pid;
+	}
+
+
+	public void setPid(Integer pid) {
+		this.pid = pid;
+	}
+
+
+	public String getPcode() {
+		return pcode;
+	}
+
+
+	public void setPcode(String pcode) {
+		this.pcode = pcode;
+	}
+
+
+	public Double getPcost() {
+		return pcost;
+	}
+
+
+	public void setPcost(Double pcost) {
+		this.pcost = pcost;
+	}
+
+
+	public String[] getDetails() {
+		return details;
+	}
+
+
+	public void setDetails(String[] details) {
+		this.details = details;
+	}
+
+
+	public Map<String, String> getVersion() {
+		return version;
+	}
+
+
+	public void setVersion(Map<String, String> version) {
+		this.version = version;
+	}
+
+	
+
+	@Override
+	public String toString() {
+		return "ReadingYamlDataRunner [pid=" + pid + ", pcode=" + pcode + ", pcost=" + pcost + ", details="
+				 + ", version=" + version + "]";
+	}
+
+
+	@Override
+	public void run(String... args) throws Exception {
+		System.out.println(new ReadingYamlDataRunner().toString() + " -> "+Arrays.toString(details));
+
+	}
+
+
+	public ReadingYamlDataRunner(Integer pid, String pcode, Double pcost, String[] details,
+			Map<String, String> version) {
+		super();
+		this.pid = pid;
+		this.pcode = pcode;
+		this.pcost = pcost;
+		this.details = details;
+		this.version = version;
+	}
+	
+	public ReadingYamlDataRunner() {}
+	
+	
+
+}

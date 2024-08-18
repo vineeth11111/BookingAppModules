@@ -1,0 +1,13 @@
+app:
+  name: google
+  url: www.google.com
+my:
+  app:
+    colors: green,blue,orange
+    edata:
+      eng: 102
+      hin: 101
+      tel: 100
+spring:
+  application:
+    name: SpringBootConcepts

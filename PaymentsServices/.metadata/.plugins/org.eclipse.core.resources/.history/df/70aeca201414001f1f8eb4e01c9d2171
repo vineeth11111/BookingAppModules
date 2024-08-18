@@ -1,0 +1,8 @@
+package com.csgroup.hyd.enums;
+
+public enum PaymentStatus {
+
+	PENDING,
+	FAILED,
+	SUCCESS
+}

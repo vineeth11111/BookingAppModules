@@ -1,0 +1,13 @@
+spring.application.name=SpringBootConcepts
+
+app.name=google
+
+app.url=www.google.com
+
+my.app.colors=green,blue,orange
+
+my.app.edata.tel=100
+my.app.edata.hin=101
+my.app.edata.eng=102
+
+

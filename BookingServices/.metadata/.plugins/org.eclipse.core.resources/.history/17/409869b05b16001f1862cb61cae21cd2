@@ -1,0 +1,9 @@
+spring.application.name=SpringBootConcepts
+
+app.name=google
+
+app.url=www.google.com
+
+my.app.colors[0]=green
+my.app.colors[1]=blue
+

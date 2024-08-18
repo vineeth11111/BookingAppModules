@@ -1,0 +1,13 @@
+package com.example.raidurgam.brokers;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.example.raidurgam.dto.BookingDTO;
+
+@FeignClient(name = "payment-service" , url="http://localhost:9092/payments")
+public interface PaymentServiceBroker {
+
+	@PostMapping("/")
+	BookingDTO createPayment(BookingDTO bookingDTO);
+}
